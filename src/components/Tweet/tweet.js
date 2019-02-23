@@ -2,17 +2,19 @@ import React from 'react';
 
 import './tweet.css';
 
-const Tweet = (props) => (
+const Tweet = ({ avatar, fullname, content, usename, date}) => (
 	<div className="tweet">
 		<div className="avatar">
-			<img src={props.avatar} role="presentation" />
+			<img src={avatar} role="presentation" />
 		</div>
 		<div className="data">
 			<div className="infos">
-				<strong>{props.fullname}</strong>
+				<strong className="fullname">{fullname}</strong>
+				<small className="gray">{usename}</small>
+				<small className="gray date">{date}</small>
 			</div>
 			<div className="content">
-				<p>{props.content}</p>	
+				<p>{content}</p>	
 			</div>
 		</div>
 	</div>

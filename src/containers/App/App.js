@@ -3,22 +3,21 @@ import './App.css';
 
 import { tweets } from '../../constants';
 import Tweet from '../../components/Tweet';
+import tweetBox from '../../components/tweetBox';
+import Home from '../../containers/home';
 
 console.log(tweets);
 
 const App = () => (
-	<div className="tweet">
-		<Tweet
-			avatar={tweets[1].avatar}
-			fullname={tweets[1].fullname}
-			content={tweets[1].content}
-		/>
-		<Tweet
-			avatar={tweets[0].avatar}
-			fullname={tweets[0].fullname}
-			content={tweets[0].content}
-		/>
-	</div>
+<main>
+	<home>
+		<tweetBox />
+		{tweets.map((tweet, index) => (
+			<Tweet
+				{...tweet} key={index} />
+		))}
+	</home>
+</main>
 );
 
 export default App;
