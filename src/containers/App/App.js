@@ -10,7 +10,7 @@ console.log(tweets);
 
 const App = () => (
 <main>
-	<home>
+	<home className="tweetFormat">
 		<tweetBox />
 		{tweets.map((tweet, index) => (
 			<Tweet
