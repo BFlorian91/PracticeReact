@@ -1,0 +1,5 @@
+.message-enter {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.2s;
+}
