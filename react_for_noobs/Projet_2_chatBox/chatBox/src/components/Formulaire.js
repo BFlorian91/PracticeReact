@@ -16,14 +16,19 @@ class Formulaire extends React.Component {
 		this.props.addMessage(message);
 
 		this.messageForm.reset();
+		this.setState.length = this.props.length;
 	};
 
 	count = (event) => {
 		const length = this.props.length - this.message.value.length;
 		console.log(length);
+		this.setState({ length });
 	};
 
 	render() {
+
+
+
 		return (
 			<form 
 				className="form" 
@@ -32,12 +37,12 @@ class Formulaire extends React.Component {
 			>
 				<textarea 
 					required 
-					maxLenght={this.props.length} 
+					maxLength={this.props.length} 
 					ref={input => this.message = input}
 					onChange={(e) => this.count(e)}
 				/>
 				<div className="info">
-					{this.props.length}
+					{this.state.length}
 				</div>
 				<button type="submit">Send!</button>
 			</form>
