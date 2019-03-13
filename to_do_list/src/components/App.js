@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 /* Component */
 import TodoItem from './todo';
@@ -7,13 +7,23 @@ import TodoItem from './todo';
 import todoData from '../todoData';
 
 
-export default function App() {
-	const todoItem = todoData.map((data) => <TodoItem key={data.id} item={data}/>)
+export default class App extends Component {
 
-	return (
-		<div className="todo-list">
-			<h1>TodoList</h1>		I
-			{todoItem}
-		</div>
+	constructor() {
+		super()
+		this.state = {
+			todos: todoData
+		}
+	}
+
+	render() {
+		const todoItems = this.state.todos.map((data) => <TodoItem key={data.id} item={data}/>);
+			
+		return (
+			<div className="todo-list">
+				<h1>TodoList</h1>
+				{todoItems}
+			</div>
 		)
+	}
 }
