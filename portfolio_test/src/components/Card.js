@@ -2,16 +2,16 @@ import React from 'react';
 
 export default function Card(props) {
 	return (
-				<div class="col s4 m4">
-					<div class="card">
-						<div class="card-image">
+				<div className="col s4 m4">
+					<div className="card">
+						<div className="card-image">
 							<img className="" alt="" style={{height: 250}} src={props.img} />
-							<span class="card-title">{props.name}</span>
+							<span className="card-title">{props.name}</span>
 						</div>
-						<div class="card-content" style={{height: 200}}>
+						<div className="card-content" style={{height: 200}}>
 							<p style={{}}>{props.description}</p>
 						</div>
-						<div class="card-action">
+						<div className="card-action">
 							<a href={props.url}><i className="material-icons">link</i></a>
 						</div>
 					</div>
