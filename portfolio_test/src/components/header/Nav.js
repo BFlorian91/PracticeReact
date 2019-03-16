@@ -5,14 +5,12 @@ export default class Navbar extends Component {
 		return (
 			<div className="col s12">
 				<nav>
-					<div className="nav-wrapper blue lighten-2">
-						<form>
-							<div className="input-field">
-								<input id="search" type="search" required />
-								<label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-								<i className="material-icons">close</i>
-							</div>
-						</form>
+					<div class="nav-wrapper blue lighten-2">
+						<a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+						<ul class="right hide-on-med-and-down">
+							<li><a><i class="material-icons">search</i></a></li>
+							<li><a href="#cards"><i class="material-icons">view_module</i></a></li>
+						</ul>
 					</div>
 				</nav>
 			</div>

@@ -13,7 +13,7 @@ export default class App extends Component {
 					<div className="row">
 						<Skills />		
 					</div>
-					<div className="row" style={{paddingTop: 50}}>
+					<div id="cards" className="row" style={{paddingTop: 50}}>
 						<Projects />
 					</div>
 				</div>
