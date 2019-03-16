@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './Nav';
+import Navbar from './header/Nav';
 import Projects from './Project_list';
 import Skills from './Level.js';
+import Footer from './footer/Footer';
 
 export default class App extends Component {
 	render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
 						<Projects />
 					</div>
 				</div>
+				<Footer />
 			</div>
 		)
 	}
