@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 /*
 Challenge:
@@ -16,23 +17,38 @@ export default class App extends Component {
         super()
         this.state = {
             isLogin: false,
-        };
-    }
+				};
+			this.handleClick = this.handleClick.bind(this);
+		}
+
+		handleClick() {
+			this.setState((prevState) => {
+				return {
+					isLogin: !prevState.isLogin
+				}
+			})
+		}
+
+
     render(){
-        let buttonName = "";
-        let userState = "log out";
-        if (this.state.isLogin === true) {
-            buttonName = "logout";
-            userState = "logged in"
-        } else {
-            buttonName = "login";
-            userState = "logged out";
-        }
-        return (
-            <div>
-                <h3>user is {userState} !</h3>
-                <button onClick={() => this.setState({isLogin: !this.state.isLogin})}>{buttonName}</button>
-            </div>
-        )
+			
+			const buttonStyle_2 = {
+				backgroundColor: "#FF9800",
+				width: 100,
+				height: 50,
+				fontSize: 20,
+				color: "white"
+			}
+
+      let buttonName = this.state.isLogin ? "logout" : "login";
+      let userState = this.state.isLogin ? "Logged in" : "Logged out";
+			
+			return (
+      	<div style={{textAlign: "center"}}>
+        	<h3>user is {userState} !</h3>
+						<button className="but1" onClick={() => this.setState({isLogin: !this.state.isLogin})}>{buttonName}</button>
+						<button style={buttonStyle_2} onClick={this.handleClick}>{buttonName}</button>
+        </div>
+      )
     }
 }
