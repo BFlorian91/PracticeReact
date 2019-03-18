@@ -5,7 +5,7 @@ export default class Weather extends Component {
 	state = {
 		loading: false,
 		test: undefined,
-		city: "paris"
+		city: "paris",
 	}
 
 	componentDidMount() {
@@ -25,8 +25,7 @@ export default class Weather extends Component {
 		/* Break for loading time from API */
 		if (!this.state.test) return null;
 		/* =============================== */
-
-		const text = this.state.loading ? null : this.state.test.name
+		const text = this.state.loading ? null : this.state.test.name;
 		return(
 			<div>
 				<h1>{text}</h1>
