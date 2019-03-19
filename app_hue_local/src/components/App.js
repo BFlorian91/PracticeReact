@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RestController from './RestController'
 
 export default class App extends Component {
 	constructor() {
@@ -52,7 +51,8 @@ export default class App extends Component {
 
 		const statLight = this.state.isChecked ? "light is up" : "light is down";
 
-		this.state.isChecked ? json[3].state.on = true : json[3].state.on = false;
+		this.state.isChecked ? this.state.status[3].state.on = true : this.state.status[3].state.on = false;
+		console.log(this.state.status[3].state.on)
 		return (
 			<div className="container">
 				<h1>{returnValue}</h1>
