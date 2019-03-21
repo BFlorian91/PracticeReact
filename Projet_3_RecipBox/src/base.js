@@ -1,7 +1,7 @@
 import Rebase from 're-base';
 
 const base = Rebase.createClass({
-	apiKey: "AIzaSyBsuDRd0j7cSqrwt67DipAeoXDVuOxfkQk",
+	apiKey: "APIKEY",
 	authDomain: "recipboxlearnreact.firebaseapp.com",
 	databaseURL: "https://recipboxlearnreact.firebaseio.com",
 })
