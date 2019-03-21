@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Connexion extends Component {
-	
-	goToApp = (event) => {
+class Connexion extends React.Component {
+
+	goToApp = event => {
 		event.preventDefault();
-		// Recup du Pseudo
+		// On récupère le pseudo
 		const pseudo = this.boxInput.value;
-		// Switch l'url
+		// On change d'url
 		this.context.router.transitionTo(`/box/${pseudo}`);
 	}
 
@@ -14,18 +14,18 @@ export default class Connexion extends Component {
 		return (
 			<div className="connexionBox">
 				<form className="connexion" onSubmit={(e) => this.goToApp(e)} >
-					<h1>My recipesbox</h1>
-					<input 
-						type="text" 
-						placeholder="Name of cooker" 
-						pattern="[A-Za-z-]{1,}" 
-						required ref={(input) => {this.boxInput = input}} />
-					<button type="submit">Go</button>
+					<h1>Ma Boîte à Recettes</h1>
+					<input type="text" placeholder="Nom du Chef" pattern="[A-Za-z-]{1,}" required ref={(input) => {this.boxInput = input}} />
+					<button type="submit">GO</button>
+					<p>Pas de caractères spéciaux.</p>
 				</form>
 			</div>
 		)
 	}
-	static contextType = {
+
+	static contextTypes = {
 		router: React.PropTypes.object
 	};
 }
+
+export default Connexion;
