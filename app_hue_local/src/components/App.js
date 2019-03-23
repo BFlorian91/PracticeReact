@@ -16,7 +16,6 @@ export default class App extends Component {
 		fetch("https://192.168.1.53/api/2Jxg2yBReSrHtACcxtRrnNjodriZyME1t5G08YVb/lights")
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({
 					loading: false,
 					status: data,
@@ -24,10 +23,15 @@ export default class App extends Component {
 			})
 	}
 
+	edit(profile) {
+		
+	}
+
 	toggleChange() {
 		this.setState({
-			isChecked: !this.state.isChecked
+			isChecked: !this.state.isChecked,
 		})
+		this.state.isChecked ? this.state.status[3].state.on = true : this.state.status[3].state.on = false;
 	}
 
 	render() {
@@ -51,7 +55,6 @@ export default class App extends Component {
 
 		const statLight = this.state.isChecked ? "light is up" : "light is down";
 
-		this.state.isChecked ? this.state.status[3].state.on = true : this.state.status[3].state.on = false;
 		console.log(this.state.status[3].state.on)
 		return (
 			<div className="container">
